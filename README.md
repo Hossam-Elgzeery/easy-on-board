@@ -16,9 +16,6 @@
 
 :ok_hand: **[Why easy-on-board ?](#why-easy-on-board-)**
 
-[![npm](https://img.shields.io/npm/dt/easy-on-board?label=Total%20Downloads)]()
-[![npm](https://img.shields.io/npm/v/easy-on-board?color=green&label=Latest%20Version)]()
-
 [![Twitter Follow](https://img.shields.io/twitter/follow/HossamElgzeery?label=Follow%20Me&style=social)](https://www.twitter.com/HossamElgzeery)
 
 </div>
@@ -44,7 +41,7 @@ easy on Board is a react native package that helps you to make an onBoard Screen
   - Removing indicator keys warning
   - Implementing swipe gesture
 
-- **version 2.0.0** :
+- **version 2.0.1** :
 
   - Adding useOnBoard hook :tada:
   - Applying some performance improvements
