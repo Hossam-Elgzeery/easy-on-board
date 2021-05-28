@@ -1,7 +1,7 @@
-import onBoardWrapper from './onBoardWrapper';
-import onBoardComponent from './onBoardComponent';
+import onBoardWrapper from "./src/onBoardWrapper";
+import onBoardComponent from "./src/onBoardComponent";
 
-const EasyOnBoard = {Screen: onBoardWrapper, Component: onBoardComponent};
+const EasyOnBoard = { Screen: onBoardWrapper, Component: onBoardComponent };
 
 export default EasyOnBoard;
-export {default as useOnBoard} from './useOnBoard';
+export { default as useOnBoard } from "./src/useOnBoard";
