@@ -1,5 +1,6 @@
 import React from "react";
-import EasyOnBoard from "../index";
+import EasyOnBoardScreen from "./onBoardWrapper";
+import EasyOnBoardComponent from "./onBoardComponent";
 
 /**
  *
@@ -10,19 +11,19 @@ import EasyOnBoard from "../index";
  * @returns EasyOnBoardScreen Element
  */
 const useOnBoard = ({ children, onFinish, swipeable, indicator }) => (
-  <EasyOnBoard.Screen
+  <EasyOnBoardScreen
     onFinish={onFinish}
     swipeable={swipeable}
     indicator={indicator}
   >
     {children.map((child, index) => (
-      <EasyOnBoard.Component
+      <EasyOnBoardComponent
         text={child.text}
         imageSource={child.imageSource}
         key={index}
       />
     ))}
-  </EasyOnBoard.Screen>
+  </EasyOnBoardScreen>
 );
 
 export default useOnBoard;
