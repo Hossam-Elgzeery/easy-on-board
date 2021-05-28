@@ -1,5 +1,5 @@
-import React from 'react';
-import EasyOnBoard from './index';
+import React from "react";
+import EasyOnBoard from "../index";
 
 /**
  *
@@ -9,11 +9,12 @@ import EasyOnBoard from './index';
  * @param {boolean} indicator boolean value to determine showing indicator or not
  * @returns EasyOnBoardScreen Element
  */
-const useOnBoard = ({children, onFinish, swipeable, indicator}) => (
+const useOnBoard = ({ children, onFinish, swipeable, indicator }) => (
   <EasyOnBoard.Screen
     onFinish={onFinish}
     swipeable={swipeable}
-    indicator={indicator}>
+    indicator={indicator}
+  >
     {children.map((child, index) => (
       <EasyOnBoard.Component
         text={child.text}
