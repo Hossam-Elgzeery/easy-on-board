@@ -44,10 +44,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
   - Removing indicator keys warning
   - Implementing swipe gesture
 
-- **version 1.1.1** :
+- **version 1.2.0** :
 
-- Adding useOnBoard hook :tada:
-- Applying some performance improvements
+  - Adding useOnBoard hook :tada:
+  - Applying some performance improvements
 
 # ShowCase
 
