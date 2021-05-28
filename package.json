@@ -1,0 +1,35 @@
+{
+  "name": "easy-on-board",
+  "version": "1.1.1",
+  "description": "easy on Board is a react native package that helps you to make an on Board Screen without efforts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "native",
+    "easy",
+    "onBoard",
+    "onBoarding",
+    "on-board",
+    "on-boarding",
+    "swipe",
+    "gesture",
+    "swipeable"
+  ],
+  "author": "Hossam Abdel-Aziz <hossam.elgzeery@live.com>",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-native": "^0.64.1"
+  },
+  "dependencies": {
+    "easy-responsive-dimensions": "^0.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hossam-Elgzeery/easy-on-board.git"
+  }
+}
