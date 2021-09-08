@@ -1,21 +1,22 @@
-import React, {useState, useCallback} from 'react';
-import {View, TouchableOpacity, Text, PanResponder} from 'react-native';
-import Indicator from './indicator';
-import styles from './styles';
+import React, { useState, useCallback } from "react";
+import { View, TouchableOpacity, Text, PanResponder } from "react-native";
+import Indicator from "./indicator";
+import styles from "./styles";
 
 const onBoardWrapper = ({
   children,
   onFinish,
-  nextButtonText = 'Next',
+  nextButtonText = "Next",
   nextButtonStyle = styles.nextButton,
   nextTextStyle = styles.textStyle,
-  backButtonText = 'Back',
+  backButtonText = "Back",
   backButtonStyle = styles.backButton,
   backTextStyle = styles.textStyle,
   indicator = false,
   swipeable = false,
   indicatorColor = styles.indicatorStyle.backgroundColor,
   selectedIndicatorColor = styles.selectedIndicatorStyle.backgroundColor,
+  finishButtonText = "Finish",
 }) => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
@@ -49,7 +50,8 @@ const onBoardWrapper = ({
   return (
     <View
       style={styles.wrapper}
-      {...(swipeable && {...innerResponder.panHandlers})}>
+      {...(swipeable && { ...innerResponder.panHandlers })}
+    >
       {children[currentScreen]}
 
       {currentScreen == 0 ? null : (
@@ -60,7 +62,9 @@ const onBoardWrapper = ({
 
       <TouchableOpacity onPress={onNextPressed} style={nextButtonStyle}>
         <Text style={nextTextStyle}>
-          {currentScreen == children.length - 1 ? 'Finish' : nextButtonText}
+          {currentScreen == children.length - 1
+            ? finishButtonText
+            : nextButtonText}
         </Text>
       </TouchableOpacity>
 
