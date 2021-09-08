@@ -18,6 +18,7 @@ const useOnBoard = ({ children, onFinish, swipeable, indicator }) => (
   >
     {children.map((child, index) => (
       <EasyOnBoardComponent
+        title={child.title}
         text={child.text}
         imageSource={child.imageSource}
         key={index}

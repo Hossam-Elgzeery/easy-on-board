@@ -50,6 +50,11 @@ easy on Board is a react native package that helps you to make an onBoard Screen
 
   - adding finish text prop
 
+- **version 2.2.2** :
+
+  - adding onBoard component title prop
+  - adding onBoard component text style prop
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -93,15 +98,17 @@ yarn add easy-on-board
 - **EasyOnBoard.Component** which is the wrapped component as we will see and it has 3 props:
 
   - **text** (**Required**)
+  - **title** (**Required**)
   - **imageSource** (**Required**) and this takes the source of the image , like "require('./myimage.png')" or "{uri: 'https://reactjs.org/logo-og.png'}"
 
   - **style** component styling props (**Optional**)
+  - **textStyle** text styling props (**Optional**)
 
 **:fire:or you can just use The Hook:fire:**
 
 - **useOnBoard** and it takes 4 props and finish the whole work for you :
 
-  - **children** which is an array of objects where each object has 2 properties {text,imageSource} (**Required**)
+  - **children** which is an array of objects where each object has 2 properties {text,imageSource,title} (**Required**)
 
   - **onFinish** the function to be called on last component which could be navigation to another screen (**Required**)
 
@@ -144,9 +151,21 @@ import EasyOnBoard, { useOnBoard } from "easy-on-board";
 
 ```javascript
 const children = [
-  { text: "First component", imageSource: require("./src/assets/first.png") },
-  { text: "Second component", imageSource: require("./src/assets/first.png") },
-  { text: "Third component", imageSource: require("./src/assets/first.png") },
+  {
+    title: "First",
+    text: "First component",
+    imageSource: require("./src/assets/first.png"),
+  },
+  {
+    title: "Second",
+    text: "Second component",
+    imageSource: require("./src/assets/second.png"),
+  },
+  {
+    title: "Third",
+    text: "Third component",
+    imageSource: require("./src/assets/third.png"),
+  },
 ];
 
 const onFinish = () => {
