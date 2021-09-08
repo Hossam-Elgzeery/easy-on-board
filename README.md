@@ -55,6 +55,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
   - adding onBoard component title prop
   - adding onBoard component text style prop
 
+- **version 2.2.3** :
+
+  - default styles improvements
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -133,16 +137,19 @@ import EasyOnBoard, { useOnBoard } from "easy-on-board";
   swipeable
 >
   <EasyOnBoard.Component
+    title="First"
     text="First Component"
     imageSource={require("./src/assets/first.png")}
   />
   <EasyOnBoard.Component
+    title="Second"
     text="Second Component"
     imageSource={require("./src/assets/second.png")}
   />
   <EasyOnBoard.Component
+    title="Third"
     text="Third Component"
-    imageSource={require("./src/assets/first.png")}
+    imageSource={require("./src/assets/third.png")}
   />
 </EasyOnBoard.Screen>
 ```

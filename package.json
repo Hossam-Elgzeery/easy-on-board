@@ -1,6 +1,6 @@
 {
   "name": "easy-on-board",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "easy on Board is a react native package that helps you to make an on Board Screen without efforts.",
   "main": "index.js",
   "scripts": {
