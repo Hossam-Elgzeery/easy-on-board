@@ -17,15 +17,20 @@ const onBoardWrapper = ({
   indicatorColor = styles.indicatorStyle.backgroundColor,
   selectedIndicatorColor = styles.selectedIndicatorStyle.backgroundColor,
   finishButtonText = "Finish",
+  finishButtonStyle = styles.nextButton,
+  finishTextStyle = styles.textStyle,
+  startButtonText = "Next",
+  startButtonStyle = styles.nextButton,
+  startTextStyle = styles.textStyle,
 }) => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
   const gestureEvent = (_, gestureState) => {
     if (gestureState.dx < 0) {
-      currentScreen == children.length - 1
+      currentScreen === children.length - 1
         ? onFinish()
         : setCurrentScreen(currentScreen + 1);
-    } else if (gestureState.dx > 0 && currentScreen != 0) {
+    } else if (gestureState.dx > 0 && currentScreen !== 0) {
       setCurrentScreen(currentScreen - 1);
     }
   };
@@ -40,7 +45,7 @@ const onBoardWrapper = ({
   const innerResponder = PanResponder.create(PanResponderObject);
 
   const onNextPressed = () => {
-    currentScreen == children.length - 1
+    currentScreen === children.length - 1
       ? onFinish()
       : setCurrentScreen(currentScreen + 1);
   };
@@ -54,19 +59,25 @@ const onBoardWrapper = ({
     >
       {children[currentScreen]}
 
-      {currentScreen == 0 ? null : (
+      {currentScreen === 0 ? null : (
         <TouchableOpacity onPress={onBackPressed} style={backButtonStyle}>
           <Text style={backTextStyle}>{backButtonText}</Text>
         </TouchableOpacity>
       )}
 
-      <TouchableOpacity onPress={onNextPressed} style={nextButtonStyle}>
-        <Text style={nextTextStyle}>
-          {currentScreen == children.length - 1
-            ? finishButtonText
-            : nextButtonText}
-        </Text>
-      </TouchableOpacity>
+      {currentScreen === 0 ? (
+        <TouchableOpacity onPress={onNextPressed} style={startButtonStyle}>
+          <Text style={startTextStyle}>{startButtonText}</Text>
+        </TouchableOpacity>
+      ) : currentScreen === children.length - 1 ? (
+        <TouchableOpacity onPress={onNextPressed} style={finishButtonStyle}>
+          <Text style={finishTextStyle}>{finishButtonText}</Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity onPress={onNextPressed} style={nextButtonStyle}>
+          <Text style={nextTextStyle}>{nextButtonText}</Text>
+        </TouchableOpacity>
+      )}
 
       {!!indicator && (
         <Indicator

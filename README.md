@@ -59,6 +59,11 @@ easy on Board is a react native package that helps you to make an onBoard Screen
 
   - default styles improvements
 
+- **version 2.3.0** :
+
+  - adding start button text and styling props
+  - adding finish button text and styling props
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -87,6 +92,14 @@ yarn add easy-on-board
   - **nextTextStyle** the styling props of the text (**Optional**)
   - **nextButtonStyle** the button styling props (**Optional**)
 
+  - **startButtonText** the text to be shown on start button "same as next button but showed as at first component" (**Optional**)
+  - **startTextStyle** the styling props of the text (**Optional**)
+  - **startButtonStyle** the button styling props (**Optional**)
+
+  - **finishButtonText** the text to be shown on finish button "same as next button but showed as at last component"(**Optional**)
+  - **finishTextStyle** the styling props of the text (**Optional**)
+  - **finishButtonStyle** the button styling props (**Optional**)
+
   - **backButtonText** the text to be shown on back button (**Optional**)
   - **backTextStyle** the styling props of the text (**Optional**)
   - **backButtonStyle** the button styling props (**Optional**)
@@ -96,8 +109,6 @@ yarn add easy-on-board
   - **selectedIndicatorColor** color of the current indicator (**Optional**)
 
   - **swipeable** boolean value to determine allowing swipe gesture to change the current component or not " _default value = false_ " (**Optional**)
-
-  - **finishButtonText** the text to be shown on next button when it's the last component (**Optional**)
 
 - **EasyOnBoard.Component** which is the wrapped component as we will see and it has 3 props:
 
