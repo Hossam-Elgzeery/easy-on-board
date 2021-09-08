@@ -1,17 +1,14 @@
-import React, {useState, useCallback} from 'react';
-import {View, TouchableOpacity, Text, PanResponder} from 'react-native';
-import Indicator from './indicator';
-import styles from './styles';
+import React, { useState, useCallback } from "react";
+import { View, TouchableOpacity, Text, PanResponder } from "react-native";
+import Indicator from "./indicator";
+import styles from "./styles";
+import { BackButton } from "./defaults";
 
 const onBoardWrapper = ({
   children,
   onFinish,
-  nextButtonText = 'Next',
-  nextButtonStyle = styles.nextButton,
-  nextTextStyle = styles.textStyle,
-  backButtonText = 'Back',
-  backButtonStyle = styles.backButton,
-  backTextStyle = styles.textStyle,
+  renderNextButton,
+  renderBackButton
   indicator = false,
   swipeable = false,
   indicatorColor = styles.indicatorStyle.backgroundColor,
@@ -21,10 +18,10 @@ const onBoardWrapper = ({
 
   const gestureEvent = (_, gestureState) => {
     if (gestureState.dx < 0) {
-      currentScreen == children.length - 1
+      currentScreen === children.length - 1
         ? onFinish()
         : setCurrentScreen(currentScreen + 1);
-    } else if (gestureState.dx > 0 && currentScreen != 0) {
+    } else if (gestureState.dx > 0 && currentScreen !== 0) {
       setCurrentScreen(currentScreen - 1);
     }
   };
@@ -39,7 +36,7 @@ const onBoardWrapper = ({
   const innerResponder = PanResponder.create(PanResponderObject);
 
   const onNextPressed = () => {
-    currentScreen == children.length - 1
+    currentScreen === children.length - 1
       ? onFinish()
       : setCurrentScreen(currentScreen + 1);
   };
@@ -49,20 +46,14 @@ const onBoardWrapper = ({
   return (
     <View
       style={styles.wrapper}
-      {...(swipeable && {...innerResponder.panHandlers})}>
+      {...(swipeable && { ...innerResponder.panHandlers })}
+    >
       {children[currentScreen]}
 
-      {currentScreen == 0 ? null : (
-        <TouchableOpacity onPress={onBackPressed} style={backButtonStyle}>
-          <Text style={backTextStyle}>{backButtonText}</Text>
-        </TouchableOpacity>
-      )}
+      {currentScreen === 0 ? null : renderBackButton(onBackPressed)??<BackButton onPress={onBackPressed} />}
 
-      <TouchableOpacity onPress={onNextPressed} style={nextButtonStyle}>
-        <Text style={nextTextStyle}>
-          {currentScreen == children.length - 1 ? 'Finish' : nextButtonText}
-        </Text>
-      </TouchableOpacity>
+  
+      {renderNextButton(onNextPressed,currentScreen === children.length - 1)?? <NextButton onPress={onNextPressed} isLast={currentScreen === children.length - 1} />}
 
       {!!indicator && (
         <Indicator
