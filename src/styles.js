@@ -4,6 +4,7 @@ import { RWidth, RHeight, RFSize } from "easy-responsive-dimensions";
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
+    width: "100%",
   },
   nextButton: {
     backgroundColor: "black",

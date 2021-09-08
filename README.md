@@ -64,6 +64,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
   - adding start button text and styling props
   - adding finish button text and styling props
 
+- **version 2.3.1** :
+
+  - Wrapper style improvements
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
