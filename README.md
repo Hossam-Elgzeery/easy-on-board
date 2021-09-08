@@ -46,6 +46,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
   - Adding useOnBoard hook :tada:
   - Applying some performance improvements
 
+- **version 2.2.1** :
+
+  - adding finish text prop
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -83,6 +87,8 @@ yarn add easy-on-board
   - **selectedIndicatorColor** color of the current indicator (**Optional**)
 
   - **swipeable** boolean value to determine allowing swipe gesture to change the current component or not " _default value = false_ " (**Optional**)
+
+  - **finishButtonText** the text to be shown on next button when it's the last component (**Optional**)
 
 - **EasyOnBoard.Component** which is the wrapped component as we will see and it has 3 props:
 
@@ -156,6 +162,8 @@ const onBoardScreen = useOnBoard({
 ```
 
 # Why easy-on-board ?
+
+- :heavy_check_mark: Highly customizable :muscle:
 
 - :heavy_check_mark: Fixed wrapped component "**EasyOnBoard.Component**" :muscle:
 
