@@ -1,5 +1,11 @@
 import React, { useState, useCallback } from "react";
-import { View, TouchableOpacity, Text, PanResponder } from "react-native";
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  PanResponder,
+  I18nManager,
+} from "react-native";
 import Indicator from "./indicator";
 import styles from "./styles";
 
@@ -26,11 +32,25 @@ const onBoardWrapper = ({
   const [currentScreen, setCurrentScreen] = useState(0);
 
   const gestureEvent = (_, gestureState) => {
-    if (gestureState.dx < 0) {
+    if (gestureState.dx < 0 && !I18nManager.isRTL) {
       currentScreen === children.length - 1
         ? onFinish()
         : setCurrentScreen(currentScreen + 1);
-    } else if (gestureState.dx > 0 && currentScreen !== 0) {
+    } else if (gestureState.dx > 0 && I18nManager.isRTL) {
+      currentScreen === children.length - 1
+        ? onFinish()
+        : setCurrentScreen(currentScreen + 1);
+    } else if (
+      gestureState.dx > 0 &&
+      currentScreen !== 0 &&
+      !I18nManager.isRTL
+    ) {
+      setCurrentScreen(currentScreen - 1);
+    } else if (
+      gestureState.dx < 0 &&
+      currentScreen !== 0 &&
+      I18nManager.isRTL
+    ) {
       setCurrentScreen(currentScreen - 1);
     }
   };

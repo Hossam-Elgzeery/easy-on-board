@@ -68,6 +68,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
 
   - Wrapper style improvements
 
+- **version 2.3.2** :
+
+  - supporting RTL in swipe gestures "when LTR 'swipe right' === back and when RTL 'swipe right' === next"
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
