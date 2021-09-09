@@ -72,6 +72,10 @@ easy on Board is a react native package that helps you to make an onBoard Screen
 
   - supporting RTL in swipe gestures "when LTR 'swipe right' === back and when RTL 'swipe right' === next"
 
+- **version 2.4.0** :
+
+  - adding custom render functions for back,start,next and finish buttons
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -99,18 +103,22 @@ yarn add easy-on-board
   - **nextButtonText** the text to be shown on next button (**Optional**)
   - **nextTextStyle** the styling props of the text (**Optional**)
   - **nextButtonStyle** the button styling props (**Optional**)
+  - **renderNextComponent** render function that called to render custom next button component, **Note**: it overrides **nextButtonText** (**Optional**)
 
   - **startButtonText** the text to be shown on start button "same as next button but showed as at first component" (**Optional**)
   - **startTextStyle** the styling props of the text (**Optional**)
   - **startButtonStyle** the button styling props (**Optional**)
+  - **renderStartComponent** render function that called to render custom start button component, **Note**: it overrides **startButtonText** (**Optional**)
 
   - **finishButtonText** the text to be shown on finish button "same as next button but showed as at last component"(**Optional**)
   - **finishTextStyle** the styling props of the text (**Optional**)
   - **finishButtonStyle** the button styling props (**Optional**)
+  - **renderFinishtComponent** render function that called to render custom finish button component, **Note**: it overrides **finishButtonText** (**Optional**)
 
   - **backButtonText** the text to be shown on back button (**Optional**)
   - **backTextStyle** the styling props of the text (**Optional**)
   - **backButtonStyle** the button styling props (**Optional**)
+  - **renderBackComponent** render function that called to render custom back button component, **Note**: it overrides **backButtonText** (**Optional**)
 
   - **indicator** boolean value to determine showing indicator or not " _default value = false_ " (**Optional**)
   - **indicatorColor** color of the non-current indicators (**Optional**)

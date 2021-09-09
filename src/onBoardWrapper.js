@@ -15,9 +15,11 @@ const onBoardWrapper = ({
   nextButtonText = "Next",
   nextButtonStyle = styles.nextButton,
   nextTextStyle = styles.textStyle,
+  renderNextComponent = null,
   backButtonText = "Back",
   backButtonStyle = styles.backButton,
   backTextStyle = styles.textStyle,
+  renderBackComponent = null,
   indicator = false,
   swipeable = false,
   indicatorColor = styles.indicatorStyle.backgroundColor,
@@ -25,9 +27,11 @@ const onBoardWrapper = ({
   finishButtonText = "Finish",
   finishButtonStyle = styles.nextButton,
   finishTextStyle = styles.textStyle,
+  renderFinishComponent = null,
   startButtonText = "Next",
   startButtonStyle = styles.nextButton,
   startTextStyle = styles.textStyle,
+  renderStartComponent = null,
 }) => {
   const [currentScreen, setCurrentScreen] = useState(0);
 
@@ -81,21 +85,29 @@ const onBoardWrapper = ({
 
       {currentScreen === 0 ? null : (
         <TouchableOpacity onPress={onBackPressed} style={backButtonStyle}>
-          <Text style={backTextStyle}>{backButtonText}</Text>
+          {renderBackComponent?.() ?? (
+            <Text style={backTextStyle}>{backButtonText}</Text>
+          )}
         </TouchableOpacity>
       )}
 
       {currentScreen === 0 ? (
         <TouchableOpacity onPress={onNextPressed} style={startButtonStyle}>
-          <Text style={startTextStyle}>{startButtonText}</Text>
+          {renderStartComponent?.() ?? (
+            <Text style={startTextStyle}>{startButtonText}</Text>
+          )}
         </TouchableOpacity>
       ) : currentScreen === children.length - 1 ? (
         <TouchableOpacity onPress={onNextPressed} style={finishButtonStyle}>
-          <Text style={finishTextStyle}>{finishButtonText}</Text>
+          {renderFinishComponent?.() ?? (
+            <Text style={finishTextStyle}>{finishButtonText}</Text>
+          )}
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={onNextPressed} style={nextButtonStyle}>
-          <Text style={nextTextStyle}>{nextButtonText}</Text>
+          {renderNextComponent?.() ?? (
+            <Text style={nextTextStyle}>{nextButtonText}</Text>
+          )}
         </TouchableOpacity>
       )}
 
