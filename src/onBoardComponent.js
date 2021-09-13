@@ -6,13 +6,15 @@ const onBoardComponent = ({
   text,
   imageSource,
   title,
-  style = styles.componentStyle,
-  textStyle = styles.componentText,
+  style,
+  titleStyle,
+  textStyle,
+  imageStyle,
 }) => (
-  <View style={style}>
-    <Text style={textStyle}>{title}</Text>
-    <Image source={imageSource} style={styles.componentImage} />
-    <Text style={textStyle}>{text}</Text>
+  <View style={[styles.componentStyle, style]}>
+    <Text style={[styles.componentText, titleStyle]}>{title}</Text>
+    <Image source={imageSource} style={[styles.componentImage, imageStyle]} />
+    <Text style={[styles.componentText, textStyle]}>{text}</Text>
   </View>
 );
 

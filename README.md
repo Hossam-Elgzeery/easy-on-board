@@ -76,6 +76,11 @@ easy on Board is a react native package that helps you to make an onBoard Screen
 
   - adding custom render functions for back,start,next and finish buttons
 
+- **version 2.5.0** :
+
+  - adding EasyOnBoard component titleStyle and imageStyle props
+  - some style props improvements
+
 # ShowCase
 
 <img src="https://user-images.githubusercontent.com/31576852/118155700-cc9d2e80-b418-11eb-8e5d-ed278d50b8d4.gif" width="30%" />
@@ -134,6 +139,8 @@ yarn add easy-on-board
 
   - **style** component styling props (**Optional**)
   - **textStyle** text styling props (**Optional**)
+  - **titleStyle** title styling props (**Optional**)
+  - **imageStyle** image styling props (**Optional**)
 
 **:fire:or you can just use The Hook:fire:**
 

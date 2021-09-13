@@ -1,6 +1,6 @@
-import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
-import styles from './styles';
+import React from "react";
+import { TouchableOpacity, View } from "react-native";
+import styles from "./styles";
 
 const Indicator = ({
   currentIndex,
@@ -18,7 +18,8 @@ const Indicator = ({
           onPress={() => {
             onPress(i);
           }}
-          key={i}>
+          key={i}
+        >
           <View
             style={
               i == currentIndex
@@ -26,10 +27,10 @@ const Indicator = ({
                     ...styles.selectedIndicatorStyle,
                     backgroundColor: selectedColor,
                   }
-                : {...styles.indicatorStyle, backgroundColor: indicatorColor}
+                : { ...styles.indicatorStyle, backgroundColor: indicatorColor }
             }
           />
-        </TouchableOpacity>,
+        </TouchableOpacity>
       );
     }
   };
